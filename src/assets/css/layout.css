@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+#app {
+    margin: 0 !important;
+    height: 100%;
+}
