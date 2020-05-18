@@ -30,16 +30,26 @@
 </template>
 
 <script>
+    import emailjs from 'emailjs-com';
     export default {
         name: "contact",
         methods: {
             clickFileUploadBtn() {
                 this.$refs.fileInput.click();
             },
-            sendEmail(e) {
-                if(e != null) e.preventDefault();
-
-                console.log(this.$refs.mailForm.get);
+            sendEmail: (e) => {
+                const templateParams = {
+                    name: e.name.name,
+                    company: e.name.company,
+                    phone:e.name.phone,
+                    email:e.name.email,
+                };
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
+                    .then((result) => {
+                        console.log('SUCCESS!', result.status, result.text);
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
             }
         }
     }
