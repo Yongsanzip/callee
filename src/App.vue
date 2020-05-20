@@ -7,6 +7,9 @@
     <patent id="patent" />
     <contact id="contact" />
     <layoutFooter />
+    <div id="loader" class="loaderOverlay">
+      <div class="loader">Loading...</div>
+    </div>
   </div>
 </template>
 
